@@ -1,0 +1,67 @@
+{
+  "dir": "rtl",
+  "DASHBOARD": {
+    "Tour": "تور",
+    "Hotel":"هتل",
+    "TourGuide": "راهنمای سفر"
+  },
+  "HOTEL": {
+    "NewHotel": "هتل جدید",
+    "Name": "نام",
+    "City": "شهر",
+    "Category": "کتگوری"
+  },
+  "TOURGUIDE": {
+    "NewTourGuide": "راهنمای تور جدید",
+    "Name" : "نام",
+    "CallPhoneNumber" : "شماره تلفن",
+    "Language" : "زبان"
+  },
+  "ITINERARY": {
+    "Itinerary" : "گردشگری",
+    "date": "تاریخ",
+    "order" : "شماره",
+    "Origin" : "مبدا",
+    "Destination" : "مقصد",
+    "Pax" : "Pax",
+    "Excursion": "گشت و گذار",
+    "ArrivalFrom" : "مبدا",
+    "DepartureTo" : "مقصد",
+    "City" : "شهر",
+    "CityExcursion" : "مکان های دیدنی"
+  },
+  "Tourist": {
+    "NewTourist" : "توریست جدید",
+    "Name" : "نام",
+    "Family": "نام خانوادگی",
+    "Nationality" : "ملیت",
+    "VisaCode" : "کد ویزا",
+    "PassportNo" : "شماره پاسپورت"
+
+  },
+  "HOTELROOM": {
+    "ROOMING": "رومینگ",
+    "Hotel" : "هتل",
+    "CheckInDate" : "تاریخ ورود",
+    "CheckOutDate" : "تاریخ خروج",
+    "SingleRooms" : "اتاق یک تخته",
+    "DoubleRooms" : "اتاق دو تخته",
+    "TripleRooms" : "اتاق سه تخته",
+    "RoomNo" : "شماره اتاق ",
+    "Capacity" : "ظرفیت",
+    "TouristsId" : "توریستها",
+    "Rooming" : "اتاقدهی"
+  },
+  "City": {
+    "NewCity" : "شهر جدید",
+    "Name" : "نام شهر",
+    "Excursion": "مناطق گردشگری"
+  },
+  "BTN": {
+    "SAVE": "ذخیره",
+    "ADDMore": "بیشتر",
+    "ADD": "اضافه",
+    "ADDITEM": "اضافه آیتم",
+    "DELETE": "حذف"
+  }
+}

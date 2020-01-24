@@ -1,0 +1,43 @@
+<div class="container-fluid d-flex flex-row align-items-start justify-content-center mt-5 ">
+  <div class="w-xl-55 w-lg-70 w-md-80 w-sm-90 w-xs-100  bg-white frame d-flex flex-column align-items-center">
+    <form class="p-3  w-90  w-xl-100 d-flex flex-column align-items-center text-left" [formGroup]="CountryForm" (ngSubmit)="OnFormSubmit()"  >
+      <div class="d-flex flex-row justify-content-between w-90 w-xs-100  mb-5 FormHeaderTitle flex-wrap">
+        <span class="w-50  w-xs-100 text-left">{{'Country.EditCountry'|translate}}</span>
+        <a  class="w-50  w-xs-100 text-right" [routerLink]="['/country/country-list']">{{'Country.CountryListLink'|translate}}</a>
+      </div>
+      <div class="form-row  flex-wrap justify-content-around w-100 ">
+        <div class="form-group w-xl-42 w-lg-40 w-md-45 w-sm-65 w-xs-100 d-flex flex-row align-self-start">
+          <div class="d-flex flex-row  flex-wrap justify-content-start w-100  ">
+            <label class="justify-content-start w-100" >{{'Country.Country'|translate}}</label>
+            <div class="w-100 d-flex flex-row justify-content-start align-items-center">
+              <input
+                type="text"
+                class="form-control w-95"
+                [placeholder]="('Country.Country'| translate)"
+                formControlName="countryName">
+              <span class="register-error-message" *ngIf="CountryForm.get('countryName').errors && CountryForm.get('countryName').touched"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group w-xl-42 w-lg-40 w-md-45 w-sm-65 w-xs-100 d-flex flex-row align-self-start ">  </div>
+      </div>
+      <div class="form-row flex-wrap justify-content-around my-5 w-100">
+        <div class="form-group w-xl-42 w-lg-40 w-md-45 w-sm-60 w-xs-75 d-flex flex-row  justify-content-start ">
+          <button type="submit" class="btn btn-primary " >
+            <span *ngIf="!saveFlag">  {{'BTN.SAVE' | translate}} </span>
+            <div class="spinner-border " role="status" *ngIf="saveFlag">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </button>
+        </div>
+        <div class="form-group w-xl-42 w-lg-40 w-md-45 w-sm-60 w-xs-75  ">
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+

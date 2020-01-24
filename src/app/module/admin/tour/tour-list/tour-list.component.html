@@ -1,0 +1,50 @@
+<div class="container-fluid  d-flex flex-column align-items-center justify-content-start componentList">
+  <div class="w-xl-90 w-lg-95 w-md-95 w-sm-100 w-xs-100 my-5 d-flex flex-column align-items-center justify-content-start frame">
+    <div class="w-95 d-flex flex-row align-items-start  justify-content-start flex-wrap my-3">
+      <span class="btn btn-success mr-2 mt-2" (click)="getNewTours()">New Tours</span>
+      <span class="btn btn-primary mr-2 mt-2" (click)="getNegotiatingTours()"> Negotiating Tours</span>
+      <span class="btn btn-secondary mr-2 mt-2" (click)="getArchiveTours()"> Archive Tours</span>
+    </div>
+    <div class="w-95 d-flex flex-row align-items-start  justify-content-between flex-wrap my-3">
+      <h5  class="header-h5 my-2   ">{{listTitle}}</h5>
+      <button class="btn btn-primary text-light my-2 mx-lg-0 mx-md-0 mx-sm-3" [routerLink]="['/tour/new-tour/'+ customerId]">{{'Tour.NewTour'|translate}}</button>
+    </div>
+    <div class="w-95 d-flex flex-row align-items-start  justify-content-start  overflow-auto  my-3"  >
+      <table class=" w-100 overflow-auto rad-table custom-table" >
+        <thead >
+        <tr>
+          <th class="px-2 py-3">{{'Tour.TourCode'| translate}} </th>
+          <th class="px-2 py-3">{{'Tour.TourGuide'| translate}} </th>
+          <th class="px-2 py-3">{{'Tour.TourStartDate'| translate}} </th>
+          <th class="px-2 py-3">{{'Tour.TourEndDate'| translate}} </th>
+          <th class="px-2 py-3">{{'TABLE.Operation'| translate}} </th>
+        </tr>
+        </thead>
+        <tbody *ngIf="tourArray.length>0">
+        <tr *ngFor = "let tour of tourArray; let $index = index;">
+          <td class="px-2">{{tour.code}}</td>
+          <td class="px-2">{{tour.guide}}</td>
+          <td class="px-2">{{tour.startDate.split('T')[0]}}</td>
+          <td class="px-2">{{tour.endDate.split('T')[0]}}</td>
+          <td class="px-2" >
+         <!--   <i class="icon icon-edit mr-4  pointer operation-icon" data-toggle="tooltip" data-placement="bottom" title="Edit" style="font-size: 25px" routerLink="./tour/edit-tour/{{tour.id}}"></i>-->
+            <i class="icon icon-note  mr-4  pointer  operation-icon"
+               text-primary  data-toggle="tooltip"
+               data-placement="bottom" title="Tasks" style="font-size: 25px"
+               routerLink="/tour/tour-tasks/{{customerId}}/{{tour.id}}">
+            </i>
+            <i class="icon icon-trash  mr-4  pointer  operation-icon"   text-primary  data-toggle="tooltip" data-placement="bottom" title="Delete" style="font-size: 25px" (click)="deleteTour(tour.id)"></i>
+            <i class="fa fa-file-archive-o  mr-4  pointer  operation-icon"
+               text-primary  data-toggle="tooltip"
+               data-placement="bottom" title="Archive"
+               style="font-size: 25px" (click)="addTourToArchiveTours(tour.id)"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+    <div class="w-100  text-danger text-center py-5 font-weight-bold" *ngIf="tourArray.length===0" style="font-size: 1.10rem"> There Is No Tour In This Type</div>
+  </div>
+</div>

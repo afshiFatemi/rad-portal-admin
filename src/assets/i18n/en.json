@@ -1,0 +1,127 @@
+﻿{
+  "dir": "ltr",
+  "SideMenu": {
+    "Dashboard": "Dashboard",
+    "MarketingOffice":"Marketing Office",
+    "Setting": "Setting",
+    "Profile": "Profile",
+    "Customer": "Customer",
+    "Country": "Country",
+    "Tour": "Tour"
+  },
+  "Marketing": {
+    "NewMarketing" : "New Marketing Office",
+    "MarketingList" : " Marketing Office List",
+    "MarketingOfficeName" : "Marketing Office",
+    "EditMarketing" : "Edit Marketing Office",
+    "agent" : "Agent",
+    "NewMarketingLink" : "Add A New Marketing Office",
+    "MarketingListLink" : "List Of Marketing Office",
+    "phone": "Phone Number ",
+    "PhoneOne": "First Phone ",
+    "phoneTwo": "Second Phone ",
+    "accountNumber": "Bank Account Information",
+    "email": "Email",
+    "comments": "Comments",
+    "country": "Country",
+    "customers": "Customers"
+  },
+  "Tour": {
+    "NewTour" : "New Tour",
+    "TourList" : " Tour List ",
+    "EditTour" : "Edit Tour",
+    "TourLink" : "Add A New Tour",
+    "TourListLink" : "List Of Tour",
+    "TourCode" : "Tour Code",
+    "TourGuide" : "Tour Guide",
+    "TourStartDate" : "Tour Start Date",
+    "TourEndDate" : "Tour End Date"
+  },
+
+
+  "Customer": {
+    "NewCustomer" : "New Customer",
+    "CustomerList" : "Customer List",
+    "EditCustomer" : "Edit Customer",
+    "NewCustomerLink" : "Add A New Customer",
+    "CustomerListLink" : "List Of Customers",
+    "companyName" : "Company Name",
+    "agent" : "Agent",
+    "PhoneNumber" : "Phone Number",
+    "email" : "Email",
+    "country" : "Country",
+    "comments" : "Comments",
+    "address" : "Address",
+    "tours" : "Tours"
+  },
+
+  "Country": {
+    "NewCountry" : "New Country",
+    "Country" : "Country",
+    "countryList" : "Country List",
+    "EditCountry" : "Edit Country",
+    "NewCountryLink" : "Add A New Country",
+    "CountryListLink" : "List Of Country"
+  },
+
+  "BTN": {
+    "NEW":"New",
+    "CREATE": "Create",
+    "SAVE": "Save",
+    "EDIT": "Edit",
+    "CONFIRM": "Confirm",
+    "ADDMore": "Add More",
+    "ADD": "Add",
+    "ADDITEM": "Add Itinerary",
+    "ADDCity": "Add City",
+    "DELETE": "Delete",
+    "NEXT": "Next",
+    "CLOSE": "Close",
+    "SEND": "SEND"
+  },
+
+  "TABLE": {
+    "Operation": "Operation",
+    "Links":"Links"
+  },
+
+  "label": {
+    "list": "List",
+    "edit": "Edit",
+    "Add":"Add",
+    "new":"New",
+    "submit":"Submit",
+    "remove":"Remove",
+    "create":"Create",
+    "update":"Update",
+    "operation": "Operation",
+
+    "customer" : "Customer",
+    "NewCustomer" : "New Customer",
+    "CustomerList" : "Customer List",
+    "EditCustomer" : "Edit Customer",
+    "NewCustomerLink" : "Add A New Customer",
+    "CustomerListLink" : "List Of Customers",
+    "companyName" : "Company Name",
+    "agent" : "Agent",
+    "phoneNumber" : "Phone Number",
+    "email" : "Email",
+    "country" : "Country",
+    "comments" : "Comments",
+    "address" : "Address",
+    "tours" : "Tours",
+
+    "marketingOffice" : "Marketing Office",
+    "customers": "Customers",
+    "PhoneOne": "First Phone ",
+    "phoneTwo": "Second Phone ",
+    "phone": "Phone Number ",
+    "NewMarketing" : "New Marketing Office",
+    "MarketingList" : " Marketing Office List",
+    "EditMarketing" : "Edit Marketing Office",
+    "NewMarketingLink" : "Add A New Marketing Office",
+    "MarketingListLink" : "List Of Marketing Office"
+
+  }
+
+}

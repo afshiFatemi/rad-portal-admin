@@ -1,0 +1,27 @@
+<div class="container-fluid  d-flex flex-column align-items-center justify-content-start componentList">
+  <div class="w-xl-90 w-lg-95 w-md-95 w-sm-100 w-xs-100 my-5 d-flex flex-column align-items-center justify-content-start frame">
+    <div class="w-95 d-flex flex-row align-items-start  justify-content-between flex-wrap my-3">
+      <h5  class="header-h5 my-2 mx-lg-0 mx-md-0 mx-sm-3">{{'Country.countryList'|translate}}</h5>
+      <button class="btn btn-primary text-light my-2 mx-lg-0 mx-md-0 mx-sm-3" [routerLink]="['/country/new-country']">{{'Country.NewCountry'|translate}}</button>
+    </div>
+    <div class="w-95 d-flex flex-row align-items-start  justify-content-start  overflow-auto  my-3"  >
+      <table class=" w-100 overflow-auto rad-table custom-table" >
+        <thead >
+        <tr>
+          <th class="px-2 py-3">{{'Country.Country'| translate}} </th>
+          <th class="px-2 py-3">{{'TABLE.Operation'| translate}} </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let country of countryArray; let $index = index;">
+          <td class="px-2">{{country.name}}</td>
+          <td class="px-2" >
+            <i class="icon icon-edit mr-4  pointer operation-icon" data-toggle="tooltip" data-placement="bottom" title="Edit" style="font-size: 25px" routerLink="/country/edit-country/{{country.id}}"></i>
+            <i class="icon icon-trash  mr-4  pointer  operation-icon"   text-primary  data-toggle="tooltip" data-placement="bottom" title="Delete" style="font-size: 25px" (click)="deleteCountry(country.id)"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

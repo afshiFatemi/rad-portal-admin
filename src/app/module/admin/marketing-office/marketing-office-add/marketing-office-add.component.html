@@ -1,0 +1,114 @@
+
+<div class="container-fluid">
+  <h4 class="c-grey-900 mT-10 mB-30">Marketing Office</h4>
+  <div class="row ">
+    <div class="col-md-12 d-flex justify-content-center">
+          <div class="masonry-item col-md-8">
+            <div class="bgc-white p-20 bd">
+              <h6 class="c-grey-900">{{'label.new'|translate}} {{'Marketing.MarketingOfficeName'|translate}}</h6>
+              <div class="mT-30">
+                <!-- (keydown.enter)="$event.preventDefault()" -->
+                <form class="container" id="needs-validation" novalidate autocomplete="off" [formGroup]="Form" (ngSubmit)="OnFormSubmit(Form,$event)"
+                #FormElement>
+                
+                  <div class="row">
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" for="marketingName">{{'Marketing.MarketingOfficeName'|translate}}</label>
+                      <input type="text" class="form-control" id="marketingName" 
+                      [placeholder]="('Marketing.MarketingOfficeName'| translate)" formControlName="marketingName" >
+                      
+                      <div class="invalid-feedback" *ngIf="Form.get('marketingName').hasError('minLength').touched">
+                        First Name must follow this pattern!
+                      </div>
+                      <div class="invalid-feedback" *ngIf="Form.get('marketingName').required">
+                        new!
+                      </div>
+                      <div class="invalid-feedback" *ngIf="Form.get('marketingName').errors">
+                        .errors!
+                      </div>
+                      <div class="invalid-feedback" *ngIf="Form.get('marketingName').invalid">
+                        .invalid!
+                      </div>
+                     <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+</div> -->
+                      <!-- <span class="register-error-message w-5"  *ngIf="Form.get('marketingName').errors && Form.get('marketingName').touched">
+                        <i class="fa fa-star"></i></span> -->
+                    </div>
+
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" for="agentName">{{'Marketing.agentName'|translate}}</label>
+                      <input type="number" class="form-control" id="agentName" [placeholder]="('Marketing.agentName'| translate)"
+                      formControlName="agentName">
+                      <div class="invalid-feedback" *ngIf="Form.get('agentName').errors && Form.get('agentName').required">
+                        Please provide a valid agent name.
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row my-2">
+                    
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" >{{'Marketing.country'|translate}}</label>
+                      <ng-multiselect-dropdown
+                      name="countryId"
+                      [placeholder]="'Select country'"
+                      [data]="countryArray"
+                      formControlName="countryId"
+                      [disabled]="false"
+                      [settings]="dropdownSettings"
+                      (onSelect)="itemSelectCountry($event)"
+                      (onDeSelect)="onDeSelectCountry($event)"
+                      (onSelectAll)="onSelectAllCountry($event)"
+                      (onDeSelectAll)="onDeSelectAllCountry($event)"
+                      >
+                  </ng-multiselect-dropdown>
+
+                    </div>
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" for="email">{{'Marketing.email'|translate}}</label>
+                      <input type="email" class="form-control" id="email" [placeholder]="('Marketing.email'| translate)"
+                      formControlName="email">
+                    </div>
+            
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" for="PhoneOne">{{'Marketing.PhoneOne'|translate}}</label>
+                      <input type="number" class="form-control" id="PhoneOne" [placeholder]="('Marketing.PhoneOne'| translate)"
+                      formControlName="PhoneOne">
+                      <div class="invalid-feedback" *ngIf="Form.get('PhoneOne').errors && Form.get('PhoneOne').required">
+                        Please provide a valid PhoneOne.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3 form-group required">
+                      <label class="control-label" for="phoneTwo">{{'Marketing.phoneTwo'|translate}}</label>
+                      <input type="number" class="form-control" id="phoneTwo" [placeholder]="('Marketing.phoneTwo'| translate)"
+                      formControlName="phoneTwo">
+                      <div class="invalid-feedback" *ngIf="Form.get('phoneTwo').errors && Form.get('phoneTwo').required">
+                        Please provide a valid phone two.
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary" type="submit" >{{'label.submit' | translate}}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

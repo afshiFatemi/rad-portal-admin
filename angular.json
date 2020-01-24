@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/styles/index.scss",
+              "src/assets/fonts/travel1/travel1.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
+
           },
           "configurations": {
             "production": {
@@ -40,6 +44,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

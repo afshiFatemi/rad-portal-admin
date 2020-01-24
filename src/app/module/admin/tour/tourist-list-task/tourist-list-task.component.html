@@ -1,0 +1,101 @@
+
+<div class="w-100 d-flex flex-column align-items-center " style="background-color: #dcdee18f" >
+  <div class="container d-flex flex-row justify-content-center mt-5  mb-4">
+    <div class=" w-100 chat frame">
+      <div class="chat-header clearfix">
+        <!--  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />-->
+        <div class="chat-about   w-100">
+          <!--<div class="chat-with  float-right btn btn-outline-primary " [routerLink]="['/tour/tour-tasks/'+tourId]"> back</div>-->
+          <div class="chat-with float-left  "> Tourist List Action</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div>
+      <!-- end chat-header -->
+
+      <div class="chat-history"  #scrollMe>
+        <ul  style="list-style-type:none;"  *ngFor="let item of actionList ; let $index = index">
+          <li class="clearfix" *ngIf="item.isAdmin">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name">{{item.performer.username}}</span> <i class="fa fa-circle me m-1"></i>
+            </div>
+            <div class="message other-message float-right text-left ">
+              <div class="w-100">
+                 <span class="text-left ">
+                 <i class=" px-3 fa-2x" [className]="item.icon" [ngStyle]="{'color':item.color}" aria-hidden="true"></i>
+                   {{item.statusName}}
+                 </span>
+              </div>
+             <!-- <p class="m-0 " *ngIf="!item.seen">{{item.comment.substring(0 , 5) + ' ...'}} <span class="text-primary pointer"  style="font-size: 0.750rem"   (click)="ReadMoreBtn( item )"> Read More</span> </p>-->
+              <p class="m-0 ">{{item.comment}}
+                <span class="text-left pointer d-block align-self-center d-block" *ngIf="item.file !== null" (click)="getAttachedFile(item ,item.file.id , $index)" style="font-size: 0.700rem;">
+                {{item.file.name}}
+                  <i class="fa fa-paperclip  text-light-50  pr-3  text-left" style="font-size: 1.30rem"></i>
+              </span>
+              </p>
+
+            </div>
+          </li>
+          <li *ngIf="!item.isAdmin ">
+            <div class="message-data align-left">
+              <span class="message-data-name"><i class="fa fa-circle online m-1"></i> {{item.performer.username}}</span>
+              <span class="message-data-time">10:12 AM, Today </span>
+            </div>
+            <div class="message my-message text-left ">
+              <div class="w-100">
+                 <span class="text-left ">
+                 <i class=" px-3 fa-2x" [className]="item.icon" [ngStyle]="{'color':item.color}" aria-hidden="true"></i>
+                   {{item.statusName}}
+                 </span>
+              </div>
+              <p class=" m-0" *ngIf="!item.seen">{{item.comment.substring(0 , 5) + ' ...'}}  <span class="text-primary pointer "  style="font-size: 0.750rem"   (click)="ReadMoreBtn( item )"> open </span> </p>
+              <p class="m-0" *ngIf="item.seen">{{item.comment}}
+                <span class="text-left pointer d-block align-self-center d-block" *ngIf="item.file !== null" (click)="getAttachedFile(item ,item.file.id , $index)" style="font-size: 0.700rem;">
+                {{item.file.name}}
+                  <i class="fa fa-paperclip  text-light-50  pr-3  text-left" style="font-size: 1.30rem"></i>
+              </span>
+              </p>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- end chat-history -->
+      <form class="chat-message  d-flex flex-row justify-content-between flex-wrap " [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+        <input name="message-to-send" class=" form-control w-xl-50 w-lg-50 w-md-50 w-sm-50 w-xs-90 m-1"
+               id="message-to-send" placeholder ="Type your comment" style="height: auto"
+               formControlName="Comment">
+        <select  class="form-control w-xl-40 w-lg-40 w-md-40 w-sm-40 w-xs-70 m-1"  formControlName="Status"  >
+          <option *ngFor="let elm of optionElm" [ngValue]="elm.status">{{elm.StatusName}} </option>
+        </select>
+        <div class="w-xl-5 w-lg-5 w-md-5 w-sm-5 w-xs-20 attachment  m-1 text-left">
+          <input type="file" (change)="onFileChange($event)"  id="f02"
+                 class="form-control" accept="application/pdf, .xlsx">
+          <label class="text-left" for="f02" >
+            <i class="fa icon-attachment   px-2  pointer "></i>
+            <!-- <i class="fa fa-remove  text-danger px-2  pointer "></i>-->
+          </label>
+        </div>
+        <div class="w-100 text-left m-1 " *ngIf="attachedFlag">
+          <span class="text-primary text-left bg-light p-2" style="font-size: small">{{fileName}}</span>
+          <i class="fa fa-remove  text-danger p-2 bg-light pointer " (click)="removeFile()"></i>
+        </div>
+        <div class="w-100 mt-5">
+          <button type="submit" class="btn btn-primary  ">
+            <span *ngIf="!loading">  {{'BTN.SEND' | translate}} </span>
+            <div class="spinner-border " role="status" *ngIf="loading">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </button>
+        </div>
+
+      </form>
+      <!-- end chat-message -->
+
+    </div>
+  </div>
+
+
+
+
+</div>
