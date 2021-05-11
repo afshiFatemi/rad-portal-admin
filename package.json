@@ -36,7 +36,7 @@
     "jquery-sparkline": "^2.4.0",
     "jvectormap": "^2.0.4",
     "load-google-maps-api": "^2.0.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "ng-multiselect-dropdown": "^0.2.10",
     "perfect-scrollbar": "^1.5.0",
